@@ -10,8 +10,9 @@ void open_f(char *filename)
 	FILE *file = fopen(filename, "r");
 
 	if (!filename || !file)
+	{
 		error_handle(2, filename);
-
+	}
 	read_f(file);
 	fclose(file);
 }
@@ -48,11 +49,14 @@ void extract_line(char *buffer, int line)
 	const char *delim = "\n ";
 
 	if (buffer == NULL)
+	{
 		error_handle(4);
-
+	}
 	function = strtok(buffer, delim);
 	if (function == NULL)
+	{
 		return;
+	}
 	value = strtok(NULL, delim);
 
 	find_func(function, value, line);
@@ -79,15 +83,12 @@ void find_func(char *function, char *value, int line)
 		{"nop", nop},
 		{"swap", swap_nodes},
 		{"add", add_stack},
-		{"sub", sub_stack},
-		{"div", div_stack},
-		{"mul", mul_stack},
-		{"mod", mod_stack},
-		{NULL, NULL}
 	};
 
 	if (function[0] == '#')
+	{
 		return;
+	}
 
 	for (i = 0; func_list[i].opcode != NULL; i++)
 	{
@@ -98,7 +99,9 @@ void find_func(char *function, char *value, int line)
 		}
 	}
 	if (found == 1)
+	{
 		error_handle(3, line, function);
+	}
 }
 
 /**
@@ -121,7 +124,9 @@ void excute_fun(op_func func, char *function, char *value, int line)
 			i = 1;
 		}
 		if (value == NULL)
+		{
 			error_handle(5, line);
+		}
 		for (; value[i] != '\0'; i++)
 		{
 			if (isdigit(value[i]) == 0)
@@ -131,5 +136,7 @@ void excute_fun(op_func func, char *function, char *value, int line)
 		func(&node, line);
 	}
 	else
+	{		
 		func(&head, line);
+	}
 }
