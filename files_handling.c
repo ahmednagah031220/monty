@@ -136,7 +136,7 @@ void excute_fun(op_func func, char *function, char *value, int line)
 		func(&node, line);
 	}
 	else
-	{		
+	{
 		func(&head, line);
 	}
 }

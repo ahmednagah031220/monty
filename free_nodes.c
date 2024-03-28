@@ -1,5 +1,8 @@
 #include "monty.h"
 
+/**
+ * free_nodes - release buffer
+ */
 void free_nodes(void)
 {
 	stack_t *buff;
