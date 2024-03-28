@@ -1,5 +1,17 @@
 #include "monty.h"
 
+/**
+ * error_handle - prints error message while detection
+ * @code: The error codes are the following:
+ * (1) => The user does not give any file or more than one file to the program
+ * (2) => The file provided is not a file that can be opened or read
+ * (3) => The file provided contains an invalid instruction
+ * (4) => When the program is unable to malloc more memory
+ * (5) => When the parameter passed to the instruction "push" is not an int
+ * (6) => When the stack it empty for pint
+ * (7) => When the stack it empty for pop
+ * (8) => When stack is too short for operation
+ */
 void error_handle(int code, ...)
 {
 	va_list argument;
@@ -34,6 +46,14 @@ void error_handle(int code, ...)
 	exit(EXIT_FAILURE);
 }
 
+/**
+ * error_handle_2 - handles errors
+ * @code: The error codes are the following:
+ * (6) => When the stack it empty for pint
+ * (7) => When the stack it empty for pop
+ * (8) => When stack is too short for operation
+ * (9) => Division by zero
+ */
 void error_handle_2(int code, ...)
 {
 	va_list argument;

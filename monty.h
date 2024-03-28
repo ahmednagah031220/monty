@@ -45,6 +45,7 @@ stack_t *create_node(int n);
 void free_nodes(void);
 void print_stack(stack_t **, unsigned int);
 void add_to_stack(stack_t **, unsigned int);
+void add_to_queue(stack_t **, unsigned int);
 
 void excute_fun(op_func func, char *function, char *value, int line);
 
@@ -62,5 +63,4 @@ void error_handle(int code, ...);
 void error_handle_2(int code, ...);
 
 void add_stack(stack_t **stack, unsigned int line);
-void sub_stack(stack_t **stack, unsigned int line);
 #endif
