@@ -1,11 +1,21 @@
 #include "monty.h"
 
+/**
+ * nop - not doing anything
+ * @stack: pointer to a pointer refering to the top node of the stack
+ * @line_number: line number
+ */
 void nop(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
 }
 
+/**
+ * swap_nodes - swaps the top two elements of the stack
+ * @stack: pointer to a pointer refering to the top node of the stack
+ * @line_number: line number
+ */
 void swap_nodes(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp;
@@ -23,6 +33,11 @@ void swap_nodes(stack_t **stack, unsigned int line_number)
 	*stack = tmp;
 }
 
+/**
+ * add_stack - adding top two elements of stack
+ * @stack: pointer to a pointer refering to the top node of the stack
+ * @line: line number
+ */
 void add_stack(stack_t **stack, unsigned int line)
 {
 	stack_t *tmp;
